@@ -5,17 +5,17 @@ date: 2024-12-01
 categories: docker
 tags: docker
 image:
-  path: /assets/img/commons/Docker-Logo.webp
-  lqip: data:image/webp;base64,UklGRg4BAABXRUJQVlA4WAoAAAAQAAAAEwAACgAAQUxQSIkAAAANgJtt2/Hsjm3bScuKC3xLBRN4AauzU6ZLWv62bXWcICImAP9Z9PD6I4XR2zj6+PiejpD0mJ6H0ptl/gmuZkH6Ajm8mpOJswnN+fr5SKK9kYWgnZioFFCzNWJbRjJ+jnwc4f1uPeYz33UuMXPUQpufwYzhlsqij+OXVDJwPsUhcI23CwC4v8b/BABWUDggXgAAAPADAJ0BKhQACwA+kTqYR6WjIqEwCACwEglsAJ0y88IB6/4DyQCwi9gA/gx5/S2u/8Rk3Uq6sPnlFQAqP7GD/J//IV+j8JKqPtz+USzNHuhVLNkLvX+2y18kgF+AAAA=
+  path: /assets/img/headers/docker.webp
+  lqip: data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABwBACdASoUAAoAPpE4l0eloyIhMAgAsBIJaACdMoMYA0g5kddfIs20gPwMAAD+8K+678X27+Ifrr4b2cALtbJhFrrvOgavoKqyN2+b/3E/laaTA9E+Sxx60qVn9iyJUwv0y7bFakr0/ikf3Eqc4Pos6Sfj0wTFkbbFomvDbRHU19/n/QgVd1plDblQYRUX2tIljvsutOMMaiHkVPlVF1OND0oa7kjnIl/vJzTCpgAAAA==
   alt: Docker
 ---
 
 
-## Introduction to Docker
+### Introduction to Docker
 
 Docker is a powerful platform that allows developers to build, ship, and run applications in containers. These containers are lightweight, portable, and can be deployed consistently across various environments
 
-### 1. Installing Docker
+### Installing Docker
 To install Docker on Ubuntu run the following script in your termenal:
 ```bash
 sudo apt-get update
@@ -43,18 +43,19 @@ sudo usermod -aG docker $USER
 exec sudo su -l $USER
 ```
 
-### 2. Installing Docker Compose
+### Installing Docker Compose
 Docker Compose is a tool used for defining and managing multi-container Docker applications. To install Docker Compose, run:
+
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+sudo apt install -y docker-compose
 ```
+
 To verify the installation of Docker Compose, run:
 ```bash
 docker-compose --version
 ```
 
-### 3. Running Portainer
+### Running Portainer
 
 Portainer is a simple, easy-to-use GUI for managing Docker containers. You can run Portainer as a Docker container by executing the following commands:
 ```bash

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # you'll need webp installed
-for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done
+for file in *; do cwebp -resize 1200 600 "$file" -o "${file%.*}.webp"; done
 
 
 # conver single
