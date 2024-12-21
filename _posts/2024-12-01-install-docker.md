@@ -17,7 +17,7 @@ Docker is a powerful platform that allows developers to build, ship, and run app
 
 ### Installing Docker
 To install Docker on Ubuntu run the following script in your termenal:
-```bash
+```shell
 sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -31,34 +31,34 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 To verify the installation of Docker, run:
-```bash
+```shell
 docker --version
 ```
 >  Adding user to the Docker group
 {: .prompt-info }
 
 If you'd like to run Docker without sudo, add your user to the Docker group:
-```bash
+```shell
 sudo usermod -aG docker $USER
-exec sudo su -l $USER
+su - ${USER}
 ```
 
 ### Installing Docker Compose
 Docker Compose is a tool used for defining and managing multi-container Docker applications. To install Docker Compose, run:
 
-```bash
+```shell
 sudo apt install -y docker-compose
 ```
 
 To verify the installation of Docker Compose, run:
-```bash
+```shell
 docker-compose --version
 ```
 
 ### Running Portainer
 
 Portainer is a simple, easy-to-use GUI for managing Docker containers. You can run Portainer as a Docker container by executing the following commands:
-```bash
+```shell
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 ```
@@ -68,10 +68,10 @@ After running the above command, you can access Portainer at:
 
 ### Troubleshooting
 - If you face any issues starting Docker after installation, ensure that the Docker service is running:
-```bash
+```shell
 sudo systemctl start docker
 ```
 - To enable Docker to start on boot:
-```bash
+```shell
 sudo systemctl enable docker
 ``` 
