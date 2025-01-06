@@ -10,10 +10,14 @@ image:
   lqip: data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoUAAoAPpE6l0eloyIhMAgAsBIJZACdMoGv/gNpjBiSAADpTyEAWUOwlKDnlVsTZk9ye6gYhuIEMx6/zkQp//LbXgoP+VXEur+W/av/4LT6f5Fcq1+wPXV34bQxK9FD37eFcAAA
   alt: wazuh
 ---
+## What is Wazuh ?
+The Wazuh Security Information and Event Management (SIEM) solution is a centralized platform for aggregating and analyzing telemetry in real time for threat detection and compliance. Wazuh collects event data from various sources like endpoints, network devices, cloud workloads, and applications for broader security coverage.
+
+<!-- {: .nolineno }
 The diagram below represents a Wazuh deployment architecture. It shows the solution components and how the Wazuh server and the Wazuh indexer nodes can be configured
 
 ![](/assets/img/posts/wazuh-architecteur.webp)
-*wazuh architecteur*
+*wazuh architecteur* -->
 
 ## Requirements
 ### Container memory
