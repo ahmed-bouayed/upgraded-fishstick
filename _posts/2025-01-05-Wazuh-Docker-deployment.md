@@ -27,9 +27,15 @@ Wazuh indexer creates many memory-mapped areas. So you need to set the kernel to
 
 - Update the `vm.max_map_count` setting in `/etc/sysctl.conf` to set this value permanently.
 ```shell
-vm.max_map_count=262144 >> /etc/sysctl.conf
+vm.max_map_count=262144
 ```
-- To verify after rebooting, run
+
+- To apply the changes, run
+```shell
+sudo sysctl -p
+```
+
+- To verify, run
 ```shell
 sysctl vm.max_map_count
 ```
