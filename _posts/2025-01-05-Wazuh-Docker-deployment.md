@@ -3,7 +3,7 @@ title: wazuh
 description: Wazuh Docker deployment
 published: True
 date: 2025-01-04
-categories: siem
+categories: security
 tags: docker siem wazuh
 image:
   path: /assets/img/headers/wazuh.webp
