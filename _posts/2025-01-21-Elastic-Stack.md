@@ -18,33 +18,33 @@ Increase max_map_count
 elasticsearch creates many memory-mapped areas. So you need to set the kernel to give a process at least 262,144 memory-mapped areas.
 
 - Update the `vm.max_map_count` setting in `/etc/sysctl.conf` to set this value permanently.
-```shell
+```bash
 vm.max_map_count=262144
 ```
 
 - To apply the changes, run
-```shell
+```bash
 sudo sysctl -p
 ```
 
 - To verify, run
-```shell
+```bash
 sysctl vm.max_map_count
 ```
 
-```shell
+```bash
 git clone https://github.com/deviantony/docker-elk.git
 ```
 
-```shell
+```bash
 cd docker-elk
 ```
 
-```shell
+```bash
 docker compose up setup
 ```
 
-```shell
+```bash
 docker compose up -d
 ```
 
