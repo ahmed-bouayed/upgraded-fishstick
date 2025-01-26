@@ -26,17 +26,18 @@ We recommend configuring the Docker host with at least 6 GB of memory. Depending
 Wazuh indexer creates many memory-mapped areas. So you need to set the kernel to give a process at least 262,144 memory-mapped areas.
 
 - Update the `vm.max_map_count` setting in `/etc/sysctl.conf` to set this value permanently.
-```bash
+
+```shell
 vm.max_map_count=262144
 ```
 
 - To apply the changes, run
-```bash
+```shell
 sudo sysctl -p
 ```
 
 - To verify, run
-```bash
+```shell
 sysctl vm.max_map_count
 ```
 
@@ -48,19 +49,19 @@ sysctl vm.max_map_count
 
 ## Single-node Deployment
 1. Clone the Wazuh repository to your system
-```bash
+```shell
 git clone https://github.com/wazuh/wazuh-docker.git -b v4.9.2
 ```
 2.  enter into the single-node directory
-```bash
+```shell
 cd wazuh-docker/single-node
 ```
 3. Generate self-signed certificates
-```bash
+```shell
 docker-compose -f generate-indexer-certs.yml run --rm generator
 ```
 4. Start the Wazuh single-node deployment using docker-compose
-```bash
+```shell
 docker-compose up -d
 ```
 The default username and password for the Wazuh dashboard are `admin` and `SecretPassword`.

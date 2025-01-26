@@ -12,12 +12,12 @@ tags: Ubuntu
 
 
 ### Identify your network interface name
-```bash
+```shell
 ip addr
 ```
 Look for the active interface, typically named eth0 or ens33.
 ### Edit the netplan configuration file
-```bash
+```shell
 sudo nano /etc/netplan/01-netcfg.yaml
 ```
 Example configuration
@@ -37,10 +37,10 @@ network:
                 - 8.8.4.4
 ```
 ### Apply the changes
-```bash
+```shell
 sudo netplan apply
 ```
 ### Verify the static IP
-```bash
+```shell
 ip addr
 ```
