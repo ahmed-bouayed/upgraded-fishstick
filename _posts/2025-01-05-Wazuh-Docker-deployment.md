@@ -32,11 +32,13 @@ vm.max_map_count=262144
 ```
 
 - To apply the changes, run
+
 ```shell
 sudo sysctl -p
 ```
 
 - To verify, run
+
 ```shell
 sysctl vm.max_map_count
 ```
@@ -52,7 +54,7 @@ sysctl vm.max_map_count
 ```shell
 git clone https://github.com/wazuh/wazuh-docker.git -b v4.9.2
 ```
-2.  enter into the single-node directory
+2. enter into the single-node directory
 ```shell
 cd wazuh-docker/single-node
 ```
