@@ -11,6 +11,11 @@ image:
   alt: Nexus
 ---
 
+## what is Nexus Repository Manager
+Nexus Repository Manager is a popular artifact repository management tool developed by Sonatype. It is widely used in DevOps and software development to store, manage, and distribute artifacts such as binaries, libraries, Docker images, and other build artifacts.
+
+Nexus Repository Manager supports multiple repository formats, including Maven, npm, Docker, PyPI, NuGet, and more.
+
 ![Nexus](/assets/img/posts/nexus.png)
 
 To deploy Nexus Repository Manager using Docker Compose, you can use the official Sonatype Nexus 3 Docker image. Below is a step-by-step guide and a sample `docker-compose.yaml` file to get you started.
