@@ -11,6 +11,19 @@ image:
   alt: image
 ---
 
+
+
+add these lines to `/etc/sysctl.conf`:
+```shell
+vm.max_map_count=524288
+fs.file-max=131072
+```
+
+```shell
+```
+
+
+
 ```shell
 mkdir sonarqube && cd sonarqube
 ```
