@@ -2,7 +2,7 @@
 title: sonarqube
 description: code analysis tool for code quality and security
 published: true
-date: 2025-02-04
+date: 2025-02-06
 categories: devops
 tags: docker test devops ci
 image:
