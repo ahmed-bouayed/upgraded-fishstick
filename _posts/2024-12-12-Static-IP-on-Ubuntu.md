@@ -23,18 +23,18 @@ sudo nano /etc/netplan/01-netcfg.yaml
 Example configuration
 ```yaml
 network:
-    version: 2
-    renderer: networkd
-    ethernets:
-    eth0:  # Replace with your interface name
-        dhcp4: no
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
         addresses:
-            - 192.168.1.100/24  # Replace with your desired static IP
-        gateway4: 192.168.1.1  # Replace with your gateway
+            - 10.10.10.2/24
+        routes:
+            - to: default
+            via: 10.10.10.1
         nameservers:
-            addresses:
-                - 8.8.8.8  # Replace with your preferred DNS servers
-                - 8.8.4.4
+            search: [mydomain, otherdomain]
+            addresses: [10.10.10.1, 1.1.1.1]
 ```
 ### Apply the changes
 ```shell
