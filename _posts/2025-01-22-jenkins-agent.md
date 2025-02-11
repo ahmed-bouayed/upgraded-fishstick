@@ -11,31 +11,25 @@ image:
   alt: image
 ---
 
-
+sudo useradd jenkins
+sudo passwd jenkins
+sudo usermod -aG docker jenkins
 
 ```yaml
 services:
   jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins
-    privileged: true
-    user: root
+    image: jenkins/jenkins:lts-jdk17
     ports:
-      - 8080:8080
-      - 50000:50000
+      - "8080:8080"
+      - "50000:50000"
     volumes:
-      - ${JENKINS_HOME_PATH}:/var/jenkins_home
+      - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-```
+    user: jenkins
+    restart: unless-stopped
 
-.env
-```text
-JENKINS_HOME_PATH=/home/user/jenkins_home
-```
-
-
-```shell
-docker-compose up -d
+volumes:
+  jenkins_home:
 ```
 
 ```shell
@@ -49,7 +43,6 @@ docker logs jenkins | less
 ```shell
 ssh-keygen -t rsa -f jenkins_key
 ```
-
 
 Step 1: Set Up Jenkins via CLI
 If Jenkins is not already set up, you can use the CLI to perform initial configuration.
@@ -71,11 +64,13 @@ Install Plugins (if needed):
 ```shell
 java -jar jenkins-cli.jar -s http://<your-jenkins-server>/ install-plugin <plugin-name>
 ```
+
 Restart Jenkins:
 
 ```shell
 java -jar jenkins-cli.jar -s http://<your-jenkins-server>/ safe-restart
 ```
+
 Step 2: Add Credentials (Private Key) via CLI
 To add a private key as a credential in Jenkins:
 
@@ -95,6 +90,7 @@ Create an XML file (e.g., credential.xml) with the following structure:
   </privateKeySource>
 </com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey>
 ```
+
 Replace YOUR_PRIVATE_KEY_HERE with your actual private key.
 
 Add the Credential:
@@ -103,6 +99,7 @@ Use the jenkins-cli.jar to add the credential:
 ```shell
 java -jar jenkins-cli.jar -s http://<your-jenkins-server>/ create-credentials-by-xml system::system::jenkins _ < credential.xml
 ```
+
 Step 3: Add an Agent Node via CLI
 To add a Jenkins agent (node) via CLI:
 
@@ -127,6 +124,7 @@ Create an XML file (e.g., node.xml) with the following structure:
   <nodeProperties/>
 </slave>
 ```
+
 Replace the following placeholders:
 
 `agent-node`: Name of the agent.
@@ -145,6 +143,7 @@ Use the jenkins-cli.jar to add the node:
 ```shell
 java -jar jenkins-cli.jar -s http://<your-jenkins-server>/ create-node < agent.xml
 ```
+
 Step 4: Verify the Setup
 Check Credentials:
 Go to http://`<your-jenkins-server>`/credentials/ to verify the private key credential.

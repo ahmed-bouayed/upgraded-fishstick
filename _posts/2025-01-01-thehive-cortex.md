@@ -11,12 +11,4 @@ image:
   alt: image
 ---
 
-sudo apt install docker-compose-v2
-
-git clone https://github.com/StrangeBeeCorp/docker.git ./thehive-cortex
-
-cd thehive-cortex/testing
-
-bash ./scripts/init.sh
-
-docker compose up -d
+https://github.com/StrangeBeeCorp/docker
