@@ -1,5 +1,5 @@
 ---
-title: title
+title: nextcloud
 description: description
 published: false
 date: 2025-01-01
@@ -44,4 +44,10 @@ volumes:
   db:
 ```
 
+```shell
+docker-compose up -d
+```
+
+```shell
 docker exec -u www-data nextcloud-app-1 ./occ
+```
