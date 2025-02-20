@@ -20,4 +20,4 @@ RUN bundle install
 EXPOSE 4000
 
 # Run Jekyll and enable live-reload
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--watch"]
+CMD ["bundle", "exec", "jekyll", "s", "--host", "0.0.0.0", "--watch"]
