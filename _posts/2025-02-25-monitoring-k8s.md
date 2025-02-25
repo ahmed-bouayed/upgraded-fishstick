@@ -4,7 +4,7 @@ description: Deploy Prometheus and Grafana on Kubernetes using Helm
 published: true
 date: 2025-02-25
 categories: k8s
-tags: docker
+tags: k8s monitoring helm Prometheus Grafana Kubernetes Dashboard
 image:
   path: /assets/img/headers/mon-k8s.webp
   lqip: data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAwCdASoUAAsAPpE6l0eloyIhMAgAsBIJZQAAW+V4VXrgAP762dYR2BWQL0+TP8gRxyryQVs5dHYeIqBOElBuq1BSdWTi9AA24+3bYz+rQkzpxBXsefs1zf4PAAAA
@@ -38,7 +38,6 @@ kubectl version --client
 ## install helm
 
 ```shell
-helm
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
