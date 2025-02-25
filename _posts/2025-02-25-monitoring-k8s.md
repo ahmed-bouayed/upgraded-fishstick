@@ -93,9 +93,9 @@ kubectl --namespace monitoring port-forward $POD_NAME 3000 --address='0.0.0.0'
 ```
 -->
 
-Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
+Visit <https://github.com/prometheus-operator/kube-prometheus> for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
 
-For more information about port-forwarding, refer to Use Port Forwarding to Access Applications in a Cluster.
+## Access to Dashboard
 
 1. Navigate to `localhost:3000` in your browser.
 2. The Grafana sign-in page appears.
