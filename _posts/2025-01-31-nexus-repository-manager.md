@@ -3,7 +3,7 @@ title: Nexus
 description: Sonatype Nexus Repository delivers universal support
 published: true
 date: 2025-01-31
-categories: devops
+categories: DevOps
 tags: docker devops
 image:
   path: /assets/img/headers/nexus.webp

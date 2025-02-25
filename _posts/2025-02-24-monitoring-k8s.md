@@ -2,7 +2,7 @@
 title: Kubernetes cluster monitoring
 description: Deploy Prometheus and Grafana on Kubernetes using Helm
 published: true
-date: 2025-02-25
+date: 2025-02-24
 categories: Kubernetes
 tags: k8s monitoring kubernetes devops
 image:

@@ -3,7 +3,7 @@ title: Setting a Static IP on Ubuntu
 description: Setting a Static IP on Ubuntu
 date: 2024-12-12
 categories: Ubuntu
-tags: Ubuntu
+tags: ubuntu
 image:
     path: /assets/img/headers/ubuntu.webp
     lqip: data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQAwCdASoUAAoAPpE4l0eloyIhMAgAsBIJQAAK/08+P+l2duJQAP7VF/Lck1P+QHX8j/IL/AnWalGvWeSfomVONXI7gjUOPy/vGETGR/oT42WwhgEi7f+6vpqRlK4GKf/r2uX3k+vSElDqezZjEzqCKl/T3isAAAA=
