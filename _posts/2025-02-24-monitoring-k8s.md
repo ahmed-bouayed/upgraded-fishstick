@@ -106,6 +106,7 @@ Visit <https://github.com/prometheus-operator/kube-prometheus> for instructions 
 helm uninstall prometheus-stack -n monitoring
 kubectl delete namespace monitoring
 ```
+
 ## Next Steps
 
 - Customize monitoring with `values.yaml`
