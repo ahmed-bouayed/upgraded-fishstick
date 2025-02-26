@@ -11,7 +11,53 @@ image:
   alt: image
 ---
 
-https://github.com/StrangeBeeCorp/docker
+git clone https://github.com/StrangeBeeCorp/docker ./thehive_cortex
+
+cd thehive_cortex/testing
+
+## First steps / Initialisation
+The application will run under the user account and group that executes the init script.
+
+Run the init.sh script:
+
+bash ./scripts/init.sh
+This script wil perform following actions:
+
+Prompts for a service name to include in the Nginx server certificate.
+Initializes the secret.conf files for TheHive and Cortex.
+Generates self-signed certificate none is found in ./certificates
+Creates a .env file will user/group information and other application settings
+Verifies file and folder permissions.
+
+## Run the application stack
+
+docker compose up
+or
+
+docker compose up -d
+
+
+Access to the applications
+Open your browser, and navigate to:
+
+https://HOSTNAME_OR_IP/thehive to connect to TheHive
+https://HOSTNAME_OR_IP/cortex to connect to Cortex
+
+
+
+
+## Demo data
+Run the following script to configure TheHive and Cortex with sample data:
+
+bash ./scripts/test_init_applications.sh
+This scripts will:
+
+Initialize Cortex with a Demo organisation and thehive account
+Enable some free Analyzers
+Initialize TheHive with a Demo organisation and thehive account
+Integrate TheHive with Cortex
+Add sample data like Alerts, Observables, Custom fields.
+
 
 If cortex_6 is not listed, you'll need to create it:
 
