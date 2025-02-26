@@ -6,7 +6,7 @@ categories: Ubuntu
 tags: ubuntu
 image:
     path: /assets/img/headers/ubuntu.webp
-    lqip: data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQAwCdASoUAAoAPpE4l0eloyIhMAgAsBIJQAAK/08+P+l2duJQAP7VF/Lck1P+QHX8j/IL/AnWalGvWeSfomVONXI7gjUOPy/vGETGR/oT42WwhgEi7f+6vpqRlK4GKf/r2uX3k+vSElDqezZjEzqCKl/T3isAAAA=
+    lqip: data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACwAwCdASoUAAsAPpE6mEeloyKhMAgAsBIJYwCdACHcZTwFlvdMTAD++6SPwAPkcjI+n0V0ZYJru5Mlcu0jzpR3b0MUx3ndb41UtfwXqKMUDtruG3ns9bmZr+Hs+GH03gF+hCvoqh2yTfz7yN9H0koAAAA=
     alt: ubuntu
 ---
 

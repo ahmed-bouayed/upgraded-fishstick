@@ -6,7 +6,7 @@ categories: docker
 tags: docker
 image:
   path: /assets/img/headers/docker.webp
-  lqip: data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABwBACdASoUAAoAPpE4l0eloyIhMAgAsBIJaACdMoMYA0g5kddfIs20gPwMAAD+8K+678X27+Ifrr4b2cALtbJhFrrvOgavoKqyN2+b/3E/laaTA9E+Sxx60qVn9iyJUwv0y7bFakr0/ikf3Eqc4Pos6Sfj0wTFkbbFomvDbRHU19/n/QgVd1plDblQYRUX2tIljvsutOMMaiHkVPlVF1OND0oa7kjnIl/vJzTCpgAAAA==
+  lqip: data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACQAwCdASoUAAsAPpE4mEeloyKhMAgAsBIJYwCdACHesVuBfH9QAP77Las/tl5r7fpWLpn7D2qv6lZyZ3pZPdMJEzzWs6/VbXT4v37Anmc40jKiJ1c/hDTFWrL5tQffgaOmAH14NO7FlHCTgAA=
   alt: Docker
 ---
 
