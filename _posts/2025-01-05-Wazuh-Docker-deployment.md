@@ -2,7 +2,7 @@
 title: wazuh
 description: Wazuh Docker deployment
 published: true
-date: 2025-01-04
+date: 2025-01-05
 categories: security
 tags: docker siem wazuh
 image:

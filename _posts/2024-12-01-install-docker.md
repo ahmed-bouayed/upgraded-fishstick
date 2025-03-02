@@ -39,7 +39,7 @@ sudo docker --version
 ```
 
 > Adding user to the Docker group
-> {: .prompt-info }
+{: .prompt-info }
 
 If you'd like to run Docker without sudo, add your user to the Docker group:
 
