@@ -42,7 +42,7 @@ create `docker-compose.yaml`:
 ```yaml
 services:
   sonarqube:
-    image: sonarqube:latest
+    image: sonarqube:lts-community⁠
     container_name: sonarqube
     ports:
       - "9000:9000"
