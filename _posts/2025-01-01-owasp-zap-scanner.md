@@ -34,3 +34,17 @@ image:
         }
 ```
 
+ OWASP ZAP for Security Scanning in DevOps
+OWASP ZAP can be integrated into CI/CD pipelines to perform Dynamic Application Security Testing (DAST). You can use:
+
+- ZAP CLI (Command Line Interface)
+- ZAP Docker Image
+- ZAP API Automation
+- ZAP Baseline Scan (for quick scans)
+
+Example: Running OWASP ZAP in a DevOps Pipeline
+Using Docker:
+
+```shell
+docker run -t owasp/zap2docker-stable zap-baseline.py -t https://your-app.com
+```
