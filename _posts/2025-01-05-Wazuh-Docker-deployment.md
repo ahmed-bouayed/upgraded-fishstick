@@ -50,7 +50,7 @@ sysctl vm.max_map_count
 ```
 
 > If you don’t set the `max_map_count` on your host, the Wazuh indexer will NOT work properly.
-> {: .prompt-warning }
+{: .prompt-warning }
 
 ### Docker engine
 
