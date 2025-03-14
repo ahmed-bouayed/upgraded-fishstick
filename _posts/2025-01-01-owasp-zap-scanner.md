@@ -3,8 +3,8 @@ title: OWASP ZAP
 description: description
 published: false
 date: 2025-03-13
-categories: docker
-tags: docker
+categories: DevOps
+tags: docker 
 image:
   path: /assets/img/headers/image.webp
   lqip: data:image/webp;base64,
@@ -12,7 +12,7 @@ image:
 ---
 
 
-```groovy
+```
  stage('DAST - OWASP ZAP') {
             when {
                 branch 'PR*'
@@ -34,7 +34,7 @@ image:
         }
 ```
 
- OWASP ZAP for Security Scanning in DevOps
+OWASP ZAP for Security Scanning in DevOps
 OWASP ZAP can be integrated into CI/CD pipelines to perform Dynamic Application Security Testing (DAST). You can use:
 
 - ZAP CLI (Command Line Interface)
@@ -54,7 +54,7 @@ By default it reports all alerts as WARNings but you can specify a config file w
 
 This script is intended to be ideal to run in a CI/CD environment, even against production sites.
 ### Usage
-```text
+```
 Usage: zap-baseline.py -t <target> [options]
     -t target         target URL including the protocol, eg https://www.example.com
 Options:
@@ -103,7 +103,7 @@ This means that the script does perform actual ‘attacks’ and can potentially
 By default it reports all alerts as WARNings but you can specify a config file which can change any rules to FAIL or IGNORE. The configuration works in a very similar way as the Baseline Scan so see the Baseline page for more details.
 
 ### Usage
-```text
+```
 Usage: zap-full-scan.py -t <target> [options]
     -t target         target URL including the protocol, eg https://www.example.com
 Options:
@@ -152,7 +152,7 @@ It also includes 2 scripts that:
 
 ### Usage
 
-```text
+```
 Usage: zap-api-scan.py -t <target> -f <format> [options]
     -t target         target API definition, OpenAPI or SOAP, local file or URL, e.g. https://www.example.com/openapi.json
                       or target endpoint URL, GraphQL, e.g. https://www.example.com/graphql
@@ -185,13 +185,14 @@ Options:
     --schema          GraphQL schema location, URL or file, e.g. https://www.example.com/schema.graphqls
 ```
 
-
 ## Exit Value 
 The script will exit with codes of:
+```
 0: Success
 1: At least 1 FAIL
 2: At least one WARN and no FAILs
 3: Any other failure
+```
 By default all alerts found by ZAP will be treated as WARNings.
 
 You can use the -c or -u parameters to specify a configuration file to override this.
