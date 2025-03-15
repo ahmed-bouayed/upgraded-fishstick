@@ -1,5 +1,5 @@
 ---
-title: OWASP ZAP 
+title: ZAP 
 description: web application security scanner
 published: true
 date: 2025-03-13
