@@ -1,51 +1,24 @@
 ---
 title: OWASP ZAP 
-description: description
-published: false
+description: web application security scanner
+published: true
 date: 2025-03-13
 categories: DevOps
-tags: docker 
+tags: docker security devsecops
 image:
-  path: /assets/img/headers/image.webp
-  lqip: data:image/webp;base64,
-  alt: image
+  path: /assets/img/headers/zap.webp
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBACdASoUAAsAPpE6l0eloyIhMAgAsBIJYwCsAYte7LtwJnVnD6fp+fhueAD++ZmuKwPpZGqPG/iaX2sxiSXrblGmfLEZWPAfAlrj0shK9+QvSmwTrlX/i9pvfj+f5RzU5nvxxhcb/nMDnO046fEGO2ouAREuMqi2Ie9+rXwdw5aF2KfBQVQUaxOcOAAA
+  alt: ZAP
 ---
 
+## what is OWASP ZAP?
+ZAP (Zed Attack Proxy) is an open-source web application security scanner. It is designed to help security professionals and developers identify and fix vulnerabilities in web applications.
 
-```
- stage('DAST - OWASP ZAP') {
-            when {
-                branch 'PR*'
-            }
-            steps {
-                sh '''
-                    #### REPLACE below with Kubernetes http://IP_Address:30000/api-docs/ #####
-                    chmod 777 $(pwd)
-                    docker run -v $(pwd):/zap/wrk/:rw  ghcr.io/zaproxy/zaproxy zap-api-scan.py \
-                    -t http://134.209.155.222:30000/api-docs/ \
-                    -f openapi \
-                    -r zap_report.html \
-                    -w zap_report.md \
-                    -J zap_json_report.json \
-                    -x zap_xml_report.xml \
-                    -c zap_ignore_rules
-                '''
-            }
-        }
-```
-
-OWASP ZAP for Security Scanning in DevOps
-OWASP ZAP can be integrated into CI/CD pipelines to perform Dynamic Application Security Testing (DAST). You can use:
-
-- ZAP CLI (Command Line Interface)
-- ZAP Docker Image
-- ZAP API Automation
-- ZAP Baseline Scan (for quick scans)
-
-Example: Running OWASP ZAP in a DevOps Pipeline
-Using Docker:
+> ZAP can be integrated into CI/CD pipelines to perform Dynamic Application Security Testing (DAST).
+{: .prompt-info }
 
 ## ZAP - Baseline Scan
+
 It runs the ZAP spider against the specified target for (by default) 1 minute and then waits for the passive scanning to complete before reporting the results.
 
 This means that the script doesn’t perform any actual ‘attacks’ and will run for a relatively short period of time (a few minutes at most).
@@ -53,7 +26,7 @@ This means that the script doesn’t perform any actual ‘attacks’ and will r
 By default it reports all alerts as WARNings but you can specify a config file which can change any rules to FAIL or IGNORE.
 
 This script is intended to be ideal to run in a CI/CD environment, even against production sites.
-### Usage
+
 ```
 Usage: zap-baseline.py -t <target> [options]
     -t target         target URL including the protocol, eg https://www.example.com
@@ -87,22 +60,22 @@ Options:
 ```
 
 To run it with no ‘file’ params use:
-
+```shell
 docker run -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t https://www.example.com
+```
 If you use ‘file’ params then you need to mount the directory those file are in or will be generated in, eg
-
+```shell
 docker run -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py \
     -t https://www.example.com -g gen.conf -r testreport.html
-
-
+```
 ## ZAP - Full Scan
+
 It runs the ZAP spider against the specified target (by default with no time limit) followed by an optional ajax spider scan and then a full active scan before reporting the results.
 
 This means that the script does perform actual ‘attacks’ and can potentially run for a long period of time.
 
 By default it reports all alerts as WARNings but you can specify a config file which can change any rules to FAIL or IGNORE. The configuration works in a very similar way as the Baseline Scan so see the Baseline page for more details.
 
-### Usage
 ```
 Usage: zap-full-scan.py -t <target> [options]
     -t target         target URL including the protocol, eg https://www.example.com
@@ -132,15 +105,20 @@ Options:
     -z zap_options    ZAP command line options e.g. -z "-config aaa=bbb -config ccc=ddd"
     --hook            path to python file that define your custom hooks
 ```
+
 To run it with no ‘file’ params use:
-
+```shell
 docker run -t ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t https://www.example.com
-If you use ‘file’ params then you need to mount the directory those file are in or will be generated in, eg
+```
 
+If you use ‘file’ params then you need to mount the directory those file are in or will be generated in, eg
+```shell
 docker run -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py \
     -t https://www.example.com -g gen.conf -r testreport.html
+```
 
 ## ZAP - API Scan
+
 It is tuned for performing scans against APIs defined by OpenAPI, SOAP, or GraphQL via either a local file or a URL.
 
 It imports the definition that you specify and then runs an Active Scan against the URLs found. The Active Scan is tuned to APIs, so it doesn’t bother looking for things like XSSs.
@@ -148,9 +126,6 @@ It imports the definition that you specify and then runs an Active Scan against 
 It also includes 2 scripts that:
 - Raise alerts for any HTTP Server Error response codes
 - Raise alerts for any URLs that return content types that are not usually associated with APIs
-
-
-### Usage
 
 ```
 Usage: zap-api-scan.py -t <target> -f <format> [options]
@@ -185,14 +160,25 @@ Options:
     --schema          GraphQL schema location, URL or file, e.g. https://www.example.com/schema.graphqls
 ```
 
-## Exit Value 
-The script will exit with codes of:
-```
-0: Success
-1: At least 1 FAIL
-2: At least one WARN and no FAILs
-3: Any other failure
-```
-By default all alerts found by ZAP will be treated as WARNings.
+To use the API scanning script you just need to use the commands:
 
-You can use the -c or -u parameters to specify a configuration file to override this.
+```shell
+docker run -t ghcr.io/zaproxy/zaproxy:stable zap-api-scan.py -t \  
+    https://www.example.com/openapi.json -f openapi  
+```
+
+```shell
+docker run -v $(pwd):/zap/wrk/:rw  ghcr.io/zaproxy/zaproxy zap-api-scan.py \
+                    -t https://www.example.com/openapi.json \
+                    -f openapi \
+                    -r zap_report.html \
+                    -w zap_report.md \
+                    -J zap_json_report.json \
+                    -x zap_xml_report.xml \
+                    -c zap_ignore_rules
+```
+
+By default the script:
+- Imports the API definition supplied
+- Actively scans the API using a custom scan profile tuned for APIs
+- Reports any issues found to the command line
