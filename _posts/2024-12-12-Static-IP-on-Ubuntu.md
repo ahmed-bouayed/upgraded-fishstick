@@ -31,7 +31,7 @@ network:
             - 10.10.10.2/24
         routes:
             - to: default
-            via: 10.10.10.1
+              via: 10.10.10.1
         nameservers:
             search: [mydomain, otherdomain]
             addresses: [10.10.10.1, 1.1.1.1]
